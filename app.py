@@ -1,11 +1,6 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 from tensorflow import keras as kr
-
-df = pd.read_csv("wheat-seeds.csv")
-df.columns = ['Area','Perimeter','Compactness','LengthOfKernel','WidthOfKernel',
-              'AsymmetryCoefficient','LengthOfKernelGroove','SeedType']
 
 st.title("Wheat Seed Classifier")
 st.write("- By Mani Kumar Adapala")
@@ -14,19 +9,19 @@ st.write("\n")
 
 # Webpage
 
-area = st.slider('Area :', df['Area'].min(), df['Area'].max(), df['Area'].mean())
+area = st.slider('Area :',10.59 ,21.18 ,14.8 )
 st.write("\n")
-perimeter = st.slider('Perimeter :', df['Perimeter'].min(), df['Perimeter'].max(), df['Perimeter'].mean())
+perimeter = st.slider('Perimeter :', 12.41, 17.25, 14.5)
 st.write("\n")
-compactness = st.slider('Compactness :', df['Compactness'].min(), df['Compactness'].max(), df['Compactness'].mean())
+compactness = st.slider('Compactness :', 0.80, 0.91, 0.87)
 st.write("\n")
-kernelLength = st.slider('Kernel Length :', df['LengthOfKernel'].min(), df['LengthOfKernel'].max(), df['LengthOfKernel'].mean())
+kernelLength = st.slider('Kernel Length :', 4.89, 6.67, 5.62)
 st.write("\n")
-kernelWidth = st.slider('Kernel Width :', df['WidthOfKernel'].min(), df['WidthOfKernel'].max(), df['WidthOfKernel'].mean())
+kernelWidth = st.slider('Kernel Width :', 2.63, 4.03, 3.25)
 st.write("\n")
-asymmetryCoefficient = st.slider('Asymmetry Coefficient :', df['AsymmetryCoefficient'].min(), df['AsymmetryCoefficient'].max(), df['AsymmetryCoefficient'].mean())
+asymmetryCoefficient = st.slider('Asymmetry Coefficient :', 0.765, 8.456, 3.707)
 st.write("\n")
-lengthofKernelGroove = st.slider('Length of KernelGroove :', df['LengthOfKernelGroove'].min(), df['LengthOfKernelGroove'].max(), df['LengthOfKernelGroove'].mean())
+lengthofKernelGroove = st.slider('Length of KernelGroove :', 4.51, 6.55, 5.40)
 st.write("\n")
 
 # Model
